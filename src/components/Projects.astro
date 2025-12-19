@@ -52,6 +52,15 @@ const TAG = {
 }
 
 const PROJECTS = [
+    
+    {
+        title: 'Clon de netflix',
+        description: 'Este proyecto es un clon funcional de la plataforma de streaming Netflix, desarrollado como una Single Page Application (SPA). El objetivo es replicar la experiencia de usuario de Netflix, incluyendo la navegación fluida, reproducción de trailers, gestión de perfiles y listas de favoritos.',
+        link: '',
+        github: 'https://github.com/Alvarojrzz/netflix-clone',
+        image: 'projects/clonNetflix.webp',
+        tags: [TAG.TAILWIND , TAG.REACT]
+    },
     {
         title: 'E-Commerce',
         description: 'Una tienda de joyas con arquitectura frontend–backend, implementado con HTML5, CSS3 y JavaScript en el frontend, PHP para la lógica de negocio y MySQL para la persistencia de datos.',
@@ -61,20 +70,12 @@ const PROJECTS = [
         tags: [TAG.HTML , TAG.CSS , TAG.JS ,TAG.PHP , TAG.MYSQL]
     }
     ,{
-        title: 'Proyecto 2',
-        description: 'Descripción del proyecto 2',
-        link: 'link-del-proyecto-2',
-        github: 'link-github-proyecto-2',
-        image: 'link-imagen-proyecto-2',
-        tags: [TAG.TAILWIND , TAG.JAVA , TAG.REACT]
-    }
-    ,{
-        title: 'Proyecto 3',
-        description: 'Descripción del proyecto 3',
-        link: 'link-del-proyecto-3',
-        github: 'link-github-proyecto-3',
-        image: 'link-imagen-proyecto-3',
-        tags: []
+        title: 'Cliente FTP',
+        description: 'Cliente FTP desarrollado con JAVA , que permite a los usuarios conectarse a servidores FTP para cargar , descargar archivos de manera eficiente , crear/borrar/modificar directorios , crear/borrar archivos.',
+        link: '',
+        github: 'https://github.com/Alvarojrzz/ClientFTP',
+        image: 'projects/clienteftp.jpg',
+        tags: [TAG.JAVA]
     }
 
 ];
@@ -83,9 +84,9 @@ const PROJECTS = [
 
 {
     PROJECTS.map(({image , title , description , tags}) => (
-        <article>
+        <article class="pb-12">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <p class="text-lg mb-4 text-justify">{description}</p>
             <ul class="flex gap-x-4  flex-row items-center justify-center pb-4">
                 {tags.map((tag) =>(
                     <li>
