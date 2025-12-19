@@ -1,7 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import LinkedIn from '../components/icons/LinkedIn.astro';
+import GitHub from '../components/icons/GitHub.astro';
 ---
 
 <Layout>
-	
+	<main>
+		<section class="w-full lg:w-185 mx-auto py-44">
+			<img 
+				class="rounded-full w-12 h-12 object-contain mb-4"
+				src="/foto.png" 
+				alt="Foto alvaro"
+			/>
+			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 items-center pb-4">
+				Hey, soy Álvaro
+				<a href="https://www.linkedin.com/in/%C3%A1lvaro-ju%C3%A1rez-garc%C3%ADa-894254303/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center"
+				>
+				<div class="flex justify-center items-center px-2 py-1 bg-green-400 bg-opacity-20 text-black text-xs font-light rounded-full whitespace-nowrap">
+					Disponible para trabajar
+				</div>
+				</a>
+			</h1>
+			<h2 class="text-2xl text-wrap">
+				<span class="text-amber-400">Ingeniería Informática</span> · 
+				<span class="opacity-50">Software Developer</span> <br>
+				Explorando el mundo de la 
+				<span class="text-amber-300">Inteligencia Artificial</span>.
+				<span class="text-red-200/90">De Murcia, España <span class="text-lg">ES. </span></span>
+				<span class="opacity-70">Especializado en crear aplicaciones únicas.</span>
+			</h2>
+
+			<ul>
+				<li>
+					<a 
+						href="https://www.linkedin.com/in/%C3%A1lvaro-ju%C3%A1rez-garc%C3%ADa-894254303/">
+						<LinkedIn />
+						LinkedIn
+					</a>
+				</li>
+
+				<li>
+					<a 
+						href="https://github.com/Alvarojrzz">
+						<GitHub />
+						GitHub
+					</a>
+				</li>
+			</ul>
+		</section>
+	</main>
+
 </Layout>
