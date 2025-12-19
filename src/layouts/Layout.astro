@@ -1,16 +1,27 @@
 ---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
 import '@fontsource-variable/onest';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
+
+const {
+	title = "Porfolio Alvaro Juárez · Desarrollador de software", 
+	description = "Contrata a Álvaro Juárez, desarrollador de software especializado en crear soluciones innovadoras y eficientes."
+	} = Astro.props;
 ---
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Mi porfolio · Álvaro Juárez</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<div 
