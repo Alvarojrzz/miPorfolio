@@ -1,12 +1,64 @@
 ---
+import PHPIcon from './icons/PHP.astro';
+import TailwindIcon from './icons/Tailwind.astro';
+import JavaIcon from './icons/Java.astro';
+import ReactIcon from './icons/React.astro';
+import HTMLIcon from './icons/HTML.astro';
+import CSSIcon from './icons/CSS.astro';
+import JavaScriptIcon from './icons/JavaScript.astro';
+import MySQLIcon from './icons/MySQL.astro';
+
+const TAG = {
+    PHP:{
+        name:'PHP',
+        class: 'bg-[#777BB4]/15 text-[#e5e7ff] border border-[#777BB4]/40',
+        icon: PHPIcon
+    } , 
+    TAILWIND:{
+        name:'TailwindCSS',
+        class: 'bg-[#0ea5e9]/15 text-[#7dd3fc] border border-[#38bdf8]/40',
+        icon: TailwindIcon
+    } ,
+    JAVA:{
+        name:'Java',
+        class: 'bg-[#f89820]/20 text-[#ffd7a1] border border-[#f89820]/40',
+        icon: JavaIcon
+    },
+    REACT:{
+        name:'React',
+        class: 'bg-[#61dafb]/15 text-[#bff1ff] border border-[#61dafb]/40',
+        icon: ReactIcon
+    },
+    HTML: {
+        name:'HTML',
+        class: 'bg-[#e34f26]/15 text-[#ffcbb8] border border-[#e34f26]/40',
+        icon: HTMLIcon
+    } , 
+    CSS: {
+        name:'CSS',
+        class: 'bg-[#264de4]/15 text-[#c3d4ff] border border-[#264de4]/40',
+        icon: CSSIcon
+    } ,
+    JS: {
+        name:'JavaScript',
+        class: 'bg-[#f7df1e]/20 text-[#fef9c3] border border-[#f7df1e]/50',
+        icon: JavaScriptIcon
+    },
+    MYSQL: {
+        name:'MySQL',
+        class: 'bg-[#00618a]/15 text-[#b7e5ff] border border-[#00618a]/40',
+        icon: MySQLIcon
+    }
+}
+
 const PROJECTS = [
     {
-        title: 'Proyecto 1',
-        description: 'Descripción del proyecto 1',
-        link: 'link-del-proyecto-1',
-        github: 'link-github-proyecto-1',
-        image: 'link-imagen-proyecto-1',
-        tag: ['HTML' , 'CSS' , 'JavaScript']
+        title: 'E-Commerce',
+        description: 'Una tienda de joyas con arquitectura frontend–backend, implementado con HTML5, CSS3 y JavaScript en el frontend, PHP para la lógica de negocio y MySQL para la persistencia de datos.',
+        link: '',
+        github: 'https://github.com/Alvarojrzz/E-commerce-Jewels',
+        image: 'projects/e-commerce.webp',
+        tags: [TAG.HTML , TAG.CSS , TAG.JS ,TAG.PHP , TAG.MYSQL]
     }
     ,{
         title: 'Proyecto 2',
@@ -14,7 +66,7 @@ const PROJECTS = [
         link: 'link-del-proyecto-2',
         github: 'link-github-proyecto-2',
         image: 'link-imagen-proyecto-2',
-        tag: ['Astro' , 'TailwindCSS' , 'API']
+        tags: [TAG.TAILWIND , TAG.JAVA , TAG.REACT]
     }
     ,{
         title: 'Proyecto 3',
@@ -22,7 +74,7 @@ const PROJECTS = [
         link: 'link-del-proyecto-3',
         github: 'link-github-proyecto-3',
         image: 'link-imagen-proyecto-3',
-        tag: ['React' , 'Node.js' , 'Express']
+        tags: []
     }
 
 ];
@@ -30,20 +82,24 @@ const PROJECTS = [
 
 
 {
-    PROJECTS.map(project => (
+    PROJECTS.map(({image , title , description , tags}) => (
         <article>
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{project.title}</h3>
-            <p class="text-lg mb-4 text-pretty">{project.description}</p>
-            <ul>
-                {project.tag.map(tag => (
-                        <li>{tag}</li>
-                    ))
-                }
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-4  flex-row items-center justify-center pb-4">
+                {tags.map((tag) =>(
+                    <li>
+                       <span class={'inline-flex items-center gap-x-2 rounded-full text-sm font-semibold px-3 py-1 shadow-sm backdrop-blur ' + tag.class}>
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                        </span> 
+                    </li>
+                ) )}
             </ul>
             <img 
-                class="rounded shadow-2xl shadow-white/10"
-                src={project.image} 
-                alt={`Captura de pantalla del proyecto ${project.title}`} />
+                class="rounded shadow-2xl shadow-white/10  mb-4 object-contain"
+                src={image} 
+                alt={`Captura de pantalla del proyecto ${title}`} />
         </article>
     ))
 
