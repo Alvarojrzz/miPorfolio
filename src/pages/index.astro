@@ -7,6 +7,7 @@ import MailIcon from '../components/icons/Mail.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import Projects from '../components/Projects.astro';
+import UserIcon from '../components/icons/User.astro';
 ---
 
 <Layout>
@@ -63,6 +64,28 @@ import Projects from '../components/Projects.astro';
 			</h2>
 			<Projects />
 		</SectionContainer>
+
+		<SectionContainer id="sobre-mi" class="mt-4 pb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-x-3">
+                        <UserIcon class="size-7 text-amber-400" />
+                        Sobre mí
+                    </h2>
+                    <p class="text-lg text-justify">
+						Soy Álvaro Juárez García, estudiante de cuarto año de Ingeniería Informática y desarrollador de software con interés en el desarrollo web. Me gusta crear aplicaciones funcionales, bien estructuradas y con una experiencia de usuario clara.
+					</p>
+                </div>
+
+                <div class="flex justify-center md:justify-end">
+                    <img
+						src="/foto.png"
+						alt="Foto de Álvaro Juárez García"
+						class="rounded-full size-72 max-w-none object-cover shadow-lg"
+					>
+                </div>
+            </div>
+        </SectionContainer>
 	</main>
 
 </Layout>
