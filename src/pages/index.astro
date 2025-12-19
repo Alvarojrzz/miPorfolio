@@ -1,14 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import LinkedIn from '../components/icons/LinkedIn.astro';
-import GitHub from '../components/icons/GitHub.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import SocialPill from '../components/SocialPill.astro';
 ---
 
 <Layout>
 	<main>
-		<section class="w-full lg:w-185 mx-auto py-44">
+		<section class="w-full lg:w-185 mx-auto py-20">
 			<img 
-				class="rounded-full w-12 h-12 object-contain mb-4"
+				class="rounded-full w-20 h-20 object-contain mb-4"
 				src="/foto.png" 
 				alt="Foto alvaro"
 			/>
@@ -33,23 +34,17 @@ import GitHub from '../components/icons/GitHub.astro';
 				<span class="opacity-70">Especializado en crear aplicaciones únicas.</span>
 			</h2>
 
-			<ul>
-				<li>
-					<a 
-						href="https://www.linkedin.com/in/%C3%A1lvaro-ju%C3%A1rez-garc%C3%ADa-894254303/">
-						<LinkedIn />
-						LinkedIn
-					</a>
-				</li>
-
-				<li>
-					<a 
-						href="https://github.com/Alvarojrzz">
-						<GitHub />
-						GitHub
-					</a>
-				</li>
-			</ul>
+			<nav class="flex flex-wrap gap-3 mt-8">
+					<SocialPill href="https://www.linkedin.com/in/%C3%A1lvaro-ju%C3%A1rez-garc%C3%ADa-894254303/">
+						<LinkedInIcon class="w-5 h-5" />
+						<span class="text-sm font-medium">LinkedIn</span>
+					</SocialPill>
+				
+					<SocialPill href="https://github.com/Alvarojrzz">
+						<GitHubIcon class="w-5 h-5" />
+						<span class="text-sm font-medium">GitHub</span>
+					</SocialPill>
+			</nav>
 		</section>
 	</main>
 
