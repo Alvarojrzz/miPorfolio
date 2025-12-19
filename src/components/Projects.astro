@@ -1,0 +1,51 @@
+---
+const PROJECTS = [
+    {
+        title: 'Proyecto 1',
+        description: 'Descripción del proyecto 1',
+        link: 'link-del-proyecto-1',
+        github: 'link-github-proyecto-1',
+        image: 'link-imagen-proyecto-1',
+        tag: ['HTML' , 'CSS' , 'JavaScript']
+    }
+    ,{
+        title: 'Proyecto 2',
+        description: 'Descripción del proyecto 2',
+        link: 'link-del-proyecto-2',
+        github: 'link-github-proyecto-2',
+        image: 'link-imagen-proyecto-2',
+        tag: ['Astro' , 'TailwindCSS' , 'API']
+    }
+    ,{
+        title: 'Proyecto 3',
+        description: 'Descripción del proyecto 3',
+        link: 'link-del-proyecto-3',
+        github: 'link-github-proyecto-3',
+        image: 'link-imagen-proyecto-3',
+        tag: ['React' , 'Node.js' , 'Express']
+    }
+
+];
+---
+
+
+{
+    PROJECTS.map(project => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{project.title}</h3>
+            <p class="text-lg mb-4 text-pretty">{project.description}</p>
+            <ul>
+                {project.tag.map(tag => (
+                        <li>{tag}</li>
+                    ))
+                }
+            </ul>
+            <img 
+                class="rounded shadow-2xl shadow-white/10"
+                src={project.image} 
+                alt={`Captura de pantalla del proyecto ${project.title}`} />
+        </article>
+    ))
+
+
+}

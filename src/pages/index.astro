@@ -3,13 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import GitHubIcon from '../components/icons/GitHub.astro';
 import SocialPill from '../components/SocialPill.astro';
+import MailIcon from '../components/icons/Mail.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import CodeIcon from '../components/icons/Code.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout>
 	<main>
-		<section class="w-full lg:w-185 mx-auto py-20">
+		<SectionContainer class="py-20 pb-24">
 			<img 
-				class="rounded-full w-20 h-20 object-contain mb-4"
+				class="rounded-full size-20 object-contain mb-4"
 				src="/foto.png" 
 				alt="Foto alvaro"
 			/>
@@ -36,16 +40,29 @@ import SocialPill from '../components/SocialPill.astro';
 
 			<nav class="flex flex-wrap gap-3 mt-8">
 					<SocialPill href="https://www.linkedin.com/in/%C3%A1lvaro-ju%C3%A1rez-garc%C3%ADa-894254303/">
-						<LinkedInIcon class="w-5 h-5" />
+						<LinkedInIcon class="size-6" />
 						<span class="text-sm font-medium">LinkedIn</span>
 					</SocialPill>
 				
 					<SocialPill href="https://github.com/Alvarojrzz">
-						<GitHubIcon class="w-5 h-5" />
+						<GitHubIcon class="size-6" />
 						<span class="text-sm font-medium">GitHub</span>
 					</SocialPill>
+
+					<SocialPill href="mailto:juarezgarciaalvaro@gmail.com">
+						<MailIcon class="size-6" />
+						<span class="text-sm font-medium">juarezgarciaalvaro@gmail.com</span>
+					</SocialPill>
 			</nav>
-		</section>
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-2xl font-semibold mb-6 flex items-center gap-x-3">
+				<CodeIcon class="size-7 text-amber-400" />
+				Proyectos Destacados
+			</h2>
+			<Projects />
+		</SectionContainer>
 	</main>
 
 </Layout>
