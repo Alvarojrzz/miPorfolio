@@ -12,7 +12,7 @@ import NodejsIcon from './icons/Nodejs.astro';
 import SQLiteIcon from './icons/SQLite.astro';
 import GitHubIcon from './icons/GitHub.astro';
 import LinkIcon from './icons/Link.astro';
-import AstroIcon from './icons/Astro.astro';
+import AstroIcon from './icons/AIcon.astro';
 
 const TAG = {
     PHP:{
@@ -80,12 +80,13 @@ const PROJECTS = [
     
     {
         title: 'Clon de netflix',
-        description: 'Este proyecto es un clon funcional de la plataforma de streaming Netflix, desarrollado como una Single Page Application (SPA). El objetivo es replicar la experiencia de usuario de Netflix, incluyendo la navegación fluida, reproducción de trailers, gestión de perfiles y listas de favoritos.',
-        link: '',
+        description: 'Este proyecto es un clon funcional de Netflix, desarrollado como una Single Page Application (SPA). El objetivo es replicar la experiencia de usuario de Netflix.',
+        link: 'https://silly-salmiakki-68bd3c.netlify.app/',
         github: 'https://github.com/Alvarojrzz/netflix-clone',
         image: 'projects/clonNetflix.webp',
         tags: [TAG.REACT , TAG.TAILWIND , TAG.EXPRESS , TAG.NODEJS]
-    },
+    }
+    ,
     {
         title: 'E-Commerce',
         description: 'Una tienda de joyas con arquitectura frontend–backend, implementado con HTML5, CSS3 y JavaScript en el frontend, PHP para la lógica de negocio y MySQL para la persistencia de datos.',
@@ -94,20 +95,32 @@ const PROJECTS = [
         image: 'projects/e-commerce.webp',
         tags: [TAG.HTML , TAG.CSS , TAG.JS ,TAG.PHP , TAG.MYSQL]
     }
-    ,{
+    ,
+    {
         title: 'Cliente FTP',
         description: 'Cliente FTP desarrollado con JAVA , que permite a los usuarios conectarse a servidores FTP para cargar , descargar archivos de manera eficiente , crear/borrar/modificar directorios , crear/borrar archivos.',
         link: '',
         github: 'https://github.com/Alvarojrzz/ClientFTP',
         image: 'projects/clienteftp.jpg',
         tags: [TAG.JAVA]
-    },{
+    }
+    ,
+    {
         title: 'Web de recetas fitnes',
         description: 'Página web de recetas fitness desarrollada con Astro y TailwindCSS. Ofrece recetas , ejercicios divididos por grupo muscular y consejos de nutrición para un estilo de vida saludable.',
         link: 'https://famous-monstera-60251d.netlify.app/',
         github: 'https://github.com/Alvarojrzz/ClientFTP',
         image: 'projects/webFitness.webp',
         tags: [TAG.ASTRO , TAG.TAILWIND]
+    }
+    ,
+    {
+        title: 'Panel de administración',
+        description: 'Página web de un panel de administración desarrollada con PHP y TailwindCSS. Permite gestionar usuarios , ver logs de actividad y administrar productos en una interfaz intuitiva y segura. Se usa MySQL para la gestión de datos.',
+        link: '',
+        github: 'https://github.com/Alvarojrzz/dashboard',
+        image: 'projects/dashboard.webp',
+        tags: [TAG.PHP , TAG.TAILWIND]
     }
 
 ];
@@ -116,42 +129,46 @@ const PROJECTS = [
 
 {
     PROJECTS.map(({image , title , description , tags , github , link}) => (
-        <article class="pb-12">
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-justify">{description}</p>
-            <ul class="flex gap-x-4  flex-row items-center justify-center pb-6">
-                {tags.map((tag) =>(
-                    <li>
-                       <span class={'inline-flex items-center gap-x-2 rounded-full text-sm font-semibold px-3 py-1 shadow-sm backdrop-blur ' + tag.class}>
-                        <tag.icon class="size-4" />
-                        {tag.name}
-                        </span> 
-                    </li>
-                ) )}
-            </ul>
-            <img 
-                class="rounded shadow-2xl shadow-white/10  mb-4 object-contain"
-                src={image} 
-                alt={`Captura de pantalla del proyecto ${title}`} />
-            <div class="flex gap-4 mt-4 items-center justify-center">
-                {github && (
-                    <a 
-                        href={github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:border-white/25 transition">
-                        <GitHubIcon class="size-5" />
-                    </a>
-                )}
-                {link && (
-                    <a 
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:border-white/25 transition">
-                        <LinkIcon class="size-5" />
-                    </a>
-                )}
+        <article class="pb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            <div class="flex justify-center overflow-hidden h-full">
+                <img 
+                    class="w-full max-w-md h-full object-contain transition hover:scale-x-105 duration-500"
+                    src={image} 
+                    alt={`Captura de pantalla del proyecto ${title}`} />
+            </div>
+            <div class="flex flex-col">
+                <h3 class="text-2xl font-semibold text-yellow-200 mb-4">{title}</h3>
+                <p class="text-lg mb-6 text-justify flex-grow">{description}</p>
+                <ul class="flex gap-3 flex-row flex-wrap items-center mb-6">
+                    {tags.map((tag) =>(
+                        <li>
+                           <span class={'inline-flex items-center gap-x-2 rounded-full text-sm font-semibold px-3 py-1 shadow-sm backdrop-blur transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-default ' + tag.class}>
+                            <tag.icon class="size-4" />
+                            {tag.name}
+                            </span> 
+                        </li>
+                    ) )}
+                </ul>
+                <div class="flex gap-4 items-center justify-center">
+                    {github && (
+                        <a 
+                            href={github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:border-white/25 hover:scale-110 transition-all duration-300">
+                            <GitHubIcon class="size-5" />
+                        </a>
+                    )}
+                    {link && (
+                        <a 
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:border-white/25 hover:scale-110 transition-all duration-300">
+                            <LinkIcon class="size-5" />
+                        </a>
+                    )}
+                </div>
             </div>
         </article>
     ))
