@@ -23,6 +23,9 @@ importers:
       tailwindcss:
         specifier: ^4.1.18
         version: 4.1.18
+      yargs-parser:
+        specifier: ^21.0.1
+        version: 21.1.1
 
 packages:
 
