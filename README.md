@@ -5,7 +5,7 @@ Portafolio web personal desarrollado con Astro y Tailwind CSS, donde muestro mis
 ## 🌐 Demo en Vivo
 
 <!-- URL del sitio desplegado -->
-** **
+** https://dulcet-salamander-31bd18.netlify.app/ **
 
 ## ✨ Características
 
@@ -43,7 +43,7 @@ Portafolio web personal desarrollado con Astro y Tailwind CSS, donde muestro mis
 ## 📦 Instalación
 
 1. Clona el repositorio:
-git clone [\[URL_DEL_REPOSITORIO\]](https://github.com/Alvarojrzz/miPorfolio)
+git clone https://github.com/Alvarojrzz/miPorfolio
 cd miPortfolio
 
 2. Instala las dependencias:
