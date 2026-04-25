@@ -13,6 +13,8 @@ import SQLiteIcon from './icons/SQLite.astro';
 import GitHubIcon from './icons/Github.astro';
 import LinkIcon from './icons/Link.astro';
 import AstroIcon from './icons/AIcon.astro';
+import SpringIcon from './icons/Spring.astro';
+import PostgreSQLIcon from './icons/PostgreSQL.astro';
 
 const TAG = {
     PHP:{
@@ -73,11 +75,27 @@ const TAG = {
         name:'Astro',
         class: 'bg-[#003b57]/15 text-[#b7e5ff] border border-[#003b57]/40',
         icon: AstroIcon
+    },SPRING: {
+        name:'Spring',
+        class: 'bg-[#68bd45]/15 text-[#b7e5ff] border border-[#68bd45]/40',
+        icon: SpringIcon
+    },POSTGRESQL: {
+        name:'PostgreSQL',
+        class: 'bg-[#336791]/15 text-[#b7e5ff] border border-[#336791]/40',
+        icon: PostgreSQLIcon
     }
 }
 
 const PROJECTS = [
     
+    {
+        title: 'Gestión de coches y usuarios',
+        description: 'Backend desarrollado con Java y Spring boot para gestionar coches y usuarios. Se usa la arquitectura Hexagonal. Se implementan operaciones CRUD para coches y usuarios. Se utiliza PostgreSQL para la persistencia de datos, con JPA/Hibernate para el mapeo objeto-relacional.',
+        link: '',
+        github: 'https://github.com/Alvarojrzz/Gestion-de-coches-y-usuarios',
+        image: 'projects/gestion-coches.png',
+        tags: [TAG.JAVA ,TAG.SPRING , TAG.POSTGRESQL]
+    },
     {
         title: 'E-Commerce',
         description: 'Una tienda de joyas con arquitectura frontend–backend, implementado con HTML5, CSS3 y JavaScript en el frontend, PHP para la lógica de negocio y MySQL para la persistencia de datos.',
